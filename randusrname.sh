@@ -14,7 +14,7 @@ function check_user() {
 		echo "[+] Detected root "
 		creator
 	else
-		echo "[-] FAILED ! hello user $check1"
+		echo "[-] FAILED ! hello $check1"
 	fi
 
 }
