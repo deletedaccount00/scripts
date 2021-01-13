@@ -54,7 +54,7 @@ def mail(): #function to send mail
         print("[-] Please check your internet connection ")
 
 def requests_website():
-    website_address = "http://google.com"
+    website_address = "http://google.com" # replace google.com with your website domain name 
     r = requests.get(website_address)
     er = r.status_code
     if (er == 200):
