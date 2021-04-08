@@ -30,3 +30,4 @@ function awk_com () {
 	var_c_check=
 
 
+#under construction 
