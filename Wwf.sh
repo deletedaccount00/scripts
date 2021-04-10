@@ -1,34 +1,74 @@
 #!/bin/bash
+#NOTE function should always come first or should be above the main function
 
-read -p " Where do you want to save your work ? Enter the path  " rand4file
+#function 2
+function unique_words_in_a_file() {
+	cat $fl | grep -o -e '\w+' | tr '[a-z]' '[a-z]' | sort | uniq -c | sort -nr >> $rand4file
+}
 
-read -p " Enter the file name " fl
-empty=$fl
-#echo " ${empty:6} " 
-string_len="${#fl}" #getting the length of a fl input
-echo "length of the string $string_len "
-for (( i=$string_len-1 ; i>=0 ; i-- )); do   # use logical or operator to allow sh extension like if ( condition or condition)
-	var_cap=${empty:$i}
-	echo " this is var_cap variable ==> $var_cap "
-	if [ "$var_cap" == ".txt" ]
+
+#function 1
+function unique_words_in_line () {
+        echo " [+] Printing Unique words in a line. " 	
+	awk '{for(i=1;i<=length($0);i++){a[substr($0,i,1)]=1} for(i in a){printf("%s",i)} print "";delete a}' $fn_txt >> $savefilework 
+	var_c_check=$(echo $?)
+	echo " $var_c_check "
+	variable=0
+	if [ $var_c_check == $variable ]
 	then
-		echo " $var_cap found .txt here it should break "
-	        	
+		echo " [+] Output has successfully printed to $savefilework  " #keep track of this line
+	else
+		error
+	fi
+}
+
+#case 
+function entry () {
+	echo " [+] choosed $argument_case_num " 
+	case $argument_case_num in
+		1) unique_words_in_line ;;
+		2) unique_words_in_a_file ;;
+		*) echo " Nothing to do "
+		   exit ;;
+        esac
+
+}
+
+
+function help_function () {
+	echo " [1] Prints unique words of a LINE " 
+        echo " [2] Prints unique words in a FILE "
+} 
+
+argument_case_num=$1
+fn_txt=$2
+savefilework=$3   # This is where you save your work.
+
+if [ "$argument_case_num" == "--help" -o "$argument_case_num" == "-h" ]
+then
+	help_function
+	echo " ./scriptname.sh 1 workingfilename savingfilename "
+        exit	
+else
+	continue
+fi
+
+#echo " $fn_txt " working file 
+ 
+string_len="${#fn_txt}" #getting the length of a argument_2 which is txt file
+
+echo " [+] length of the string $string_len "
+
+for (( i=$string_len-1 ; i>=0 ; i-- )); do   # use logical or operator to allow sh extension like if ( condition or condition)
+	var_ext_chk=${fn_txt:$i} 
+	#echo " [+] This is var_ext_chk variable ==> $var_ext_chk "
+	if [ "$var_ext_chk" == ".txt" ]
+	then
+		echo " [+] File name Verified "
+		#echo " [+] First Function should run here "
+	        entry	
 		break
 	else
 		continue
         fi
-	#echo " [+]  This is what you are looking for ${empty:4} "
 done	
-
-
-#1 to print unique characters of a line 
-
-
-function awk_com () {
-	awk '{for(i=1;i<=length($0);i++){a[substr($0,i,1)]=1} for(i in a){printf("%s",i)} print "";delete a}' $fl >> $rand4file
-	var_c_check=
-
-
-#under construction 
-#working with files.
