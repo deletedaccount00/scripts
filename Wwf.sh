@@ -1,6 +1,5 @@
 #!/bin/bash
-#NOTE function should always come first or should be above the main function
-
+#This script will cut off long awk command and you can get your work done with script name and few arguments. will be updating......
 #function 2
 function unique_words_in_a_file() {
 	cat $fl | grep -o -e '\w+' | tr '[a-z]' '[a-z]' | sort | uniq -c | sort -nr >> $rand4file
@@ -72,3 +71,7 @@ for (( i=$string_len-1 ; i>=0 ; i-- )); do   # use logical or operator to allow 
 		continue
         fi
 done	
+
+
+
+#contact huddar26@gmail.com for more info
