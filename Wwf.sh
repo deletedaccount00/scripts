@@ -1,5 +1,10 @@
 #!/bin/bash
 #This script will cut off long awk command and you can get your work done with script name and few arguments. will be updating......
+#This script will check .txt extension of a first filename. will implement few more security patches in coming days
+
+
+
+
 #function 2
 function unique_words_in_a_file() {
 	cat $fl | grep -o -e '\w+' | tr '[a-z]' '[a-z]' | sort | uniq -c | sort -nr >> $rand4file
