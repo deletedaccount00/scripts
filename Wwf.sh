@@ -1,7 +1,8 @@
 #!/bin/bash
 #This script will cut off long awk command and you can get your work done with script name and few arguments. will be updating......
 #This script will check .txt extension of a first filename. will implement few more security patches in coming days
-
+# wwf ==> working with files 
+#More ideas are aprreciated as this project will benefit for the new comers who work with long awk commands. 
 
 
 
