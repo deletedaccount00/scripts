@@ -1,21 +1,29 @@
 # This code will verify if the Given number is positive integer or Negative Integer
 
-def operator_verify(first_input):
+
+def main(first_input):
   empty = ""
   if first_input == empty:
-    print(" Input is empty ")
+    print(" Seems like argument is empty ")
     quit()
   else:
-    string_length = len(first_input)
-    #print(" Length of your input is ",string_length)
+    string_capture = ""
+    if True:
+      string_capture += str(first_input)
+
+    string_length = len(string_capture)
+    #print(" Length of your input is ",string_capture)
     empty_arr = []
     for x in range(string_length):
-      empty_arr.append(first_input[x])
+      empty_arr.append(string_capture[x])
     #print(empty_arr)
     if empty_arr[0] == '-':
-      print(" " + first_input + " is a Negative Number ")
+      print(" " + str(first_input) + " is a Negative Number ")
     else:
-      print(" " + first_input + " is a Positive Number ")
-      
-input_one = input(" Enter the Number ")
-operator_verify(input_one)  
+      print(" " + str(first_input) + " is a Positive Number ")
+    
+
+
+main(21) #or the number you wish to enter be it positive or negative.
+
+
