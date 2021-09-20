@@ -40,7 +40,7 @@ def mail(): #function to send mail
     # port = 465
     #sender_email = "samfortysevn@gmail.com"
     #receiver_mail = input("Send email To: ") #incase if you don' want to enter email every time , uncomment the next line and comment out this line with #
-    receiver_mail = "paradox.3275626@gmail.com"
+    receiver_mail = # Enter receiver email here
     print(" Sending mail from " + obj_email.sender_email + " to " + receiver_mail)
     smtp_server = "smtp.gmail.com"
     context = ssl.create_default_context()
@@ -80,4 +80,3 @@ if "__name__" == "__main__":
 
 
 
-#contact me : huddar26@gmail.com
